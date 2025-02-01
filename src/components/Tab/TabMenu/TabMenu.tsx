@@ -4,18 +4,25 @@ import * as S from './TabMenu.style';
 interface TabMenuProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	icon: ReactNode;
 	menu: string;
-	isSelected: boolean;
+	isSelected?: boolean;
+	onClick?: () => void;
 }
 
-const TabMenu = ({ icon, menu, isSelected, ...props }: TabMenuProps) => {
+const TabMenu = ({
+	icon,
+	menu,
+	isSelected = true,
+	onClick,
+	...props
+}: TabMenuProps) => {
 	return (
 		<button
-			id={`${menu}-tab`}
 			type="button"
 			role="tab"
-			tabIndex={0}
+			tabIndex={isSelected ? 0 : -1}
 			aria-selected={isSelected}
 			css={S.tabMenuStyle(isSelected)}
+			onClick={onClick}
 			{...props}
 		>
 			{icon}

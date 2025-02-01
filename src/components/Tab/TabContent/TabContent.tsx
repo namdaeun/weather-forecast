@@ -1,20 +1,23 @@
 import React, { type HTMLAttributes } from 'react';
+import { useTab } from '../TabContext';
 
-interface TabContentProp extends HTMLAttributes<HTMLDivElement> {
-	tabMenu: string;
-	isSelected: boolean;
+interface TabPanelProps extends HTMLAttributes<HTMLDivElement> {
+	index: number;
 }
 
-const TabContent = ({ tabMenu, isSelected, ...props }: TabContentProp) => {
+const TabPanel = ({ index, ...props }: TabPanelProps) => {
+	const { selectedTabIndex } = useTab();
+
+	const isSelected = selectedTabIndex === index;
+
 	return (
 		<div
 			role="tabpanel"
-			hidden={!isSelected}
-			aria-labelledby={`${tabMenu}-tab`}
 			aria-hidden={!isSelected}
+			hidden={!isSelected}
 			{...props}
 		/>
 	);
 };
 
-export default TabContent;
+export default TabPanel;

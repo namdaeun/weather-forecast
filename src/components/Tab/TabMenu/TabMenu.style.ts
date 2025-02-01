@@ -8,9 +8,13 @@ export const tabMenuStyle = (isSelected: boolean) => {
 		display: 'flex',
 
 		flexDirection: 'column',
+		alignItems: 'center',
 		gap: '0.7rem',
 
 		color,
+		backgroundColor: 'transparent',
+
+		cursor: 'pointer',
 
 		svg: {
 			path: {

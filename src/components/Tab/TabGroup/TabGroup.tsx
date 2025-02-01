@@ -1,13 +1,16 @@
 import React, { type ReactNode } from 'react';
+import { TabProvider } from '../TabContext';
 
 interface TabGroupProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 
 const TabGroup = ({ children }: TabGroupProps) => {
-	return (
-		<div css={{ display: 'flex', flexDirection: 'column' }}>{children}</div>
-	);
+  return (
+    <TabProvider>
+      <div css={{ display: 'flex' }}>{children}</div>
+    </TabProvider>
+  );
 };
 
 export default TabGroup;

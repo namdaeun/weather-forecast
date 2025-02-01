@@ -1,20 +1,29 @@
 import React, { Children, type ReactNode } from 'react';
+import { useTab } from '../TabContext';
 
 interface TabListProps {
 	children: ReactNode;
-	selectedIndex: number;
-	onSelect: (index: number) => void;
 }
 
-const TabList = ({ children, selectedIndex, onSelect }: TabListProps) => {
+const TabList = ({ children }: TabListProps) => {
+	const { selectedTabIndex, setSelectedTabIndex } = useTab();
+
 	return (
-		<div role="tablist">
+		<div
+			role="tablist"
+			css={{
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'center',
+				gap: '4rem',
+			}}
+		>
 			{Children.map(children, (child, index) =>
 				React.isValidElement(child)
 					? React.cloneElement(child, {
 							...child.props,
-							isSelected: index === selectedIndex,
-							onClick: () => onSelect(index),
+							isSelected: index === selectedTabIndex,
+							onClick: () => setSelectedTabIndex(index),
 						})
 					: child,
 			)}
