@@ -2,39 +2,40 @@ import { css } from '@emotion/react';
 import { theme } from '../../style/theme';
 
 export const inputWrapperStyle = css({
-	position: 'relative',
-	display: 'flex',
+ position: 'relative',
+ display: 'flex',
 
-	padding: '1.7rem',
+ maxWidth: '70rem',
+ padding: '1.7rem',
 
-	alignItems: 'center',
-	gap: '1.2rem',
+ alignItems: 'center',
+ gap: '1.2rem',
 
-	border: 'none',
-	borderRadius: '8px',
+ border: 'none',
+ borderRadius: '8px',
 
-	backgroundColor: theme.colors.blue700,
+ backgroundColor: theme.colors.blue700,
 
-	transition: '0.2s ease-in-out',
+ transition: '0.2s ease-in-out',
 
-	'&:focus-within': {
-		boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
-	},
+ '&:focus-within': {
+  boxShadow: `inset 0 0 0 1px ${theme.colors.gray300}`,
+ },
 });
 
 export const inputStyle = css({
-	width: '100%',
+ width: '100%',
 
-	border: 'none',
+ border: 'none',
 
-	backgroundColor: 'transparent',
+ backgroundColor: 'transparent',
 
-	outline: 'none',
+ outline: 'none',
 
-	color: theme.colors.gray200,
+ color: theme.colors.gray200,
 
-	'::placeholder': {
-		color: theme.colors.gray300,
-		...theme.fonts.body3,
-	},
+ '::placeholder': {
+  color: theme.colors.gray300,
+  ...theme.fonts.body3,
+ },
 });
