@@ -43,4 +43,8 @@ export const GlobalStyle = css`
   a {
     text-decoration: none;
   }
+
+  button {
+    border: none
+  }
 `;
