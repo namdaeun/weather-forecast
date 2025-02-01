@@ -8,9 +8,6 @@ export const GlobalStyle = css`
 
     box-sizing: border-box;
 
-    color: ${theme.colors.gray200};
-    background-color: ${theme.colors.blue900};
-
     font-family:
       'Pretendard Variable',
       Pretendard,
@@ -38,6 +35,9 @@ export const GlobalStyle = css`
   html,
   body {
     font-size: 62.5%;
+
+    color: ${theme.colors.gray200};
+    background-color: ${theme.colors.blue900};
   }
 
   a {
