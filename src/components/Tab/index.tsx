@@ -6,5 +6,5 @@ import TabMenu from './TabMenu/TabMenu';
 export const Tab = Object.assign(TabGroup, {
 	List: TabList,
 	Menu: TabMenu,
-	Panel: TabContent,
+	Content: TabContent,
 });
