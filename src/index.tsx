@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import Map from './Map/Map';
+import Weather from './Weather/Weather';
 import IcSearch from './assets/svg/icon/IcSearch';
 import Input from './components/Input/Input';
 import Navbar from './components/Navbar/Navbar';
 import * as S from './index.style';
-import Map from './page/Map/Map';
-import Weather from './page/Weather/Weather';
 import type { NavItem } from './type/nav';
 
 function App() {
