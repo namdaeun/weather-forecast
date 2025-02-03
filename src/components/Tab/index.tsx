@@ -1,10 +1,10 @@
-import TabMenu from './TabButton';
-import TabContent from './TabContent';
+import TabButton from './TabButton';
 import TabGroup from './TabGroup';
 import TabList from './TabList';
+import TabPanel from './TabPanel';
 
 export const Tab = Object.assign(TabGroup, {
  List: TabList,
- Menu: TabMenu,
- Content: TabContent,
+ Button: TabButton,
+ Panel: TabPanel,
 });
