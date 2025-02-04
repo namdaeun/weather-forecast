@@ -6,7 +6,13 @@ interface TabGroupProps {
 }
 
 const TabGroup = ({ children }: TabGroupProps) => {
- return <TabProvider>{children}</TabProvider>;
+ return (
+  <TabProvider>
+   <div css={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+    {children}
+   </div>
+  </TabProvider>
+ );
 };
 
 export default TabGroup;
