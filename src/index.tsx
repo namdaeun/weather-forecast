@@ -1,6 +1,6 @@
 import React from 'react';
 
-import IcSearch from './assets/svg/IcSearch';
+import IcSearch from './asset/svg/IcSearch';
 import Input from './component/Input/Input';
 import * as S from './index.style';
 import Weather from './shared/Weather/Weather';
