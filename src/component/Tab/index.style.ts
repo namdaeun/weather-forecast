@@ -7,11 +7,15 @@ export const buttonStyle = (isSelected: boolean) => {
  return css({
   display: 'flex',
 
+  padding: '1.2rem',
+
   alignItems: 'center',
   gap: '0.7rem',
 
+  borderRadius: '12px',
+
   color,
-  backgroundColor: 'transparent',
+  backgroundColor: isSelected ? theme.colors.gray600 : 'transparent',
 
   ...theme.fonts.body1,
 
@@ -28,5 +32,13 @@ export const buttonStyle = (isSelected: boolean) => {
 export const tabListStyle = css({
  display: 'flex',
 
- gap: '4rem',
+ width: 'fit-content',
+
+ padding: '0.5rem',
+
+ borderRadius: '12px',
+
+ gap: '1rem',
+
+ backgroundColor: theme.colors.blue700,
 });
