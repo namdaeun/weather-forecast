@@ -6,9 +6,9 @@ interface TabPanelProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const TabPanel = ({ index, ...props }: TabPanelProps) => {
- const { selectedTabIndex } = useTab();
+ const { selectedIndex } = useTab();
 
- const isSelected = selectedTabIndex === index;
+ const isSelected = selectedIndex === index;
 
  return (
   <div

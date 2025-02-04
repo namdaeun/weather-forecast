@@ -6,8 +6,8 @@ import React, {
 } from 'react';
 
 interface TabContextType {
- selectedTabIndex: number;
- setSelectedTabIndex: (index: number) => void;
+ selectedIndex: number;
+ setSelectedIndex: (index: number) => void;
 }
 
 const TabContext = createContext<TabContextType | undefined>(undefined);
@@ -23,10 +23,10 @@ export const useTab = () => {
 };
 
 export const TabProvider = ({ children }: { children: ReactNode }) => {
- const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+ const [selectedIndex, setSelectedIndex] = useState(0);
 
  return (
-  <TabContext.Provider value={{ selectedTabIndex, setSelectedTabIndex }}>
+  <TabContext.Provider value={{ selectedIndex, setSelectedIndex }}>
    {children}
   </TabContext.Provider>
  );

@@ -1,13 +1,11 @@
-import React, { Children, type ReactNode } from 'react';
+import React, { Children, type PropsWithChildren } from 'react';
 import { useTab } from './TabContext';
 import * as S from './index.style';
 
-interface TabListProps {
- children: ReactNode;
-}
+type TabListProps = PropsWithChildren;
 
 const TabList = ({ children }: TabListProps) => {
- const { selectedTabIndex, setSelectedTabIndex } = useTab();
+ const { selectedIndex, setSelectedIndex } = useTab();
 
  return (
   <div role="tablist" css={S.tabListStyle}>
@@ -15,8 +13,8 @@ const TabList = ({ children }: TabListProps) => {
     React.isValidElement(child)
      ? React.cloneElement(child, {
         ...child.props,
-        isSelected: index === selectedTabIndex,
-        onClick: () => setSelectedTabIndex(index),
+        isSelected: index === selectedIndex,
+        onClick: () => setSelectedIndex(index),
        })
      : child,
    )}
