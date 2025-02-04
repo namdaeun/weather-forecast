@@ -5,7 +5,7 @@ export const DEFAULT_CURRENT: Current = {
  feelslike_c: 0,
  wind_kph: 0,
  uv: 0,
- condition: { text: 'Clear ' },
+ condition: { text: 'Clear' },
 };
 
 export const DEFAULT_FORECAST: Forecast = {
@@ -21,7 +21,7 @@ export const DEFAULT_FORECAST: Forecast = {
     feelslike_c: 0,
     wind_kph: 0,
     uv: 0,
-    condition: { text: 'Clear ' },
+    condition: { text: 'Clear' },
    },
    hour: [],
   },
@@ -33,7 +33,7 @@ export const DEFAULT_HOUR: HourlyWeather[] = [
   time: '',
   temp_c: 0,
   condition: {
-   text: 'Clear ',
+   text: 'Clear',
   },
  },
 ];

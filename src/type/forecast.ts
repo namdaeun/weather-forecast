@@ -3,6 +3,7 @@ export type Weather =
  | 'Clear'
  | 'Sunny'
  | 'Overcast'
+ | 'Mist'
  | 'Cloudy'
  | 'Light freezing rain'
  | 'Moderate snow'

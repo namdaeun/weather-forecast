@@ -7,31 +7,33 @@ import {
  IcSnow,
  IcSun,
  IcSunCloudsRain,
-} from '../assets/svg';
+} from '../asset/svg';
 import type { Weather } from '../type/forecast';
 
 export const getWeatherIcon = (weather: Weather, size: number) => {
  switch (weather) {
-  case 'Partly Cloudy ':
+  case 'Partly Cloudy':
   case 'Overcast':
   case 'Cloudy':
   case 'Mist':
-   return <IcClouds width={size} height={size} />;
-  case 'Clear ':
+   return <IcClouds width={size} height={size} css={{ flexShrink: '0' }} />;
+  case 'Clear':
   case 'Sunny':
-   return <IcSun width={size} height={size} />;
+   return <IcSun width={size} height={size} css={{ flexShrink: '0' }} />;
   case 'Light freezing rain':
-   return <IcSunCloudsRain width={size} height={size} />;
+   return (
+    <IcSunCloudsRain width={size} height={size} css={{ flexShrink: '0' }} />
+   );
   case 'Moderate snow':
   case 'Patchy snow nearby':
   case 'Light snow showers':
-   return <IcCloudsSnow width={size} height={size} />;
+   return <IcCloudsSnow width={size} height={size} css={{ flexShrink: '0' }} />;
   case 'Blizzard':
   case 'Moderate or heavy snow showers':
-   return <IcSnow width={size} height={size} />;
+   return <IcSnow width={size} height={size} css={{ flexShrink: '0' }} />;
   case 'Rain':
-   return <IcRain width={size} height={size} />;
+   return <IcRain width={size} height={size} css={{ flexShrink: '0' }} />;
   default:
-   return <IcSun width={size} height={size} />;
+   return <IcSun width={size} height={size} css={{ flexShrink: '0' }} />;
  }
 };
