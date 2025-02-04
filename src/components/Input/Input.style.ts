@@ -12,7 +12,7 @@ export const inputWrapperStyle = css({
  gap: '1.2rem',
 
  border: 'none',
- borderRadius: '8px',
+ borderRadius: '15px',
 
  backgroundColor: theme.colors.blue700,
 
