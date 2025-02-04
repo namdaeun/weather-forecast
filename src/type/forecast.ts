@@ -53,3 +53,10 @@ export type Forecastday = {
 };
 
 export type Current = TemperatureInfo;
+
+export type SearchLocation = {
+ id: number;
+ name: string;
+ region: string;
+ country: string;
+};
