@@ -35,3 +35,13 @@ type Weather =
  | 'Light snow showers'
  | 'Patchy snow nearby'
  | 'Rain';
+
+export interface Location {
+ name: string;
+ region: string;
+ country: string;
+}
+
+export interface Forecast {
+ forecastday: Forecastday[];
+}

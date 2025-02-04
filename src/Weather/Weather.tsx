@@ -4,18 +4,9 @@ import HourlyForecast from '../HourlyForecast/HourlyForecast';
 import { fetch7daysForecast } from '../api/fetch7daysForecast';
 import IcSun from '../assets/svg/icon/IcSun';
 import { Tab } from '../components/Tab';
+import type { Forecast, Location } from '../type/forecast';
 import * as S from './Weather.style';
 import WeeklyForecast from './WeeklyForecast/WeeklyForecast';
-
-interface Location {
- name: string;
- region: string;
- country: string;
-}
-
-export interface Forecast {
- forecastday: Forecastday[];
-}
 
 const Weather = () => {
  const [location, setLocation] = useState<Location>();
