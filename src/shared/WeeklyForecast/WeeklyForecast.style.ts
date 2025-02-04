@@ -1,5 +1,14 @@
 import { css } from '@emotion/react';
+import { MOBILE_MEDIA_QUERY } from '../../style/mediaQuery';
 import { theme } from '../../style/theme';
+
+export const containerStyle = css({
+ width: '40%',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  width: '100%',
+ },
+});
 
 export const wrapperStyle = css({
  display: 'flex',

@@ -11,7 +11,7 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
  }
 
  return (
-  <Container title="7-Days Forecast" css={{ width: '40%' }}>
+  <Container title="7-Days Forecast" css={S.containerStyle}>
    <div css={S.wrapperStyle}>
     {forecast.forecastday.map(day => (
      <div key={day.date} css={{}}>
