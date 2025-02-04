@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { SelectV2 } from '@sopt-makers/ui';
 import { fetchSearchResults } from './api/fetchSearchCity';
@@ -13,6 +13,8 @@ const Index = () => {
  const [searchResults, setSearchResults] = useState<SearchLocation[]>([]);
  const [selectedLocation, setSelectedLocation] = useState('Seoul');
 
+ const triggerRef = useRef<HTMLInputElement | null>(null);
+
  const handleSearch = async (location: string) => {
   if (location.trim() === '') return;
 
@@ -20,7 +22,7 @@ const Index = () => {
   setSearchResults(results);
  };
 
- const handleSelectLocation = (location: string) => {
+ const handleSelect = (location: string) => {
   setSelectedLocation(location);
   setValue(location);
   setSearchResults([]);
@@ -32,12 +34,19 @@ const Index = () => {
     <SelectV2.Root type="text" css={S.triggerStyle}>
      <SelectV2.Trigger>
       <Input
+       ref={triggerRef}
        placeholder="Search for a city"
        leftIcon={<IcSearch width={15} height={15} />}
        value={value}
        onChange={e => {
         setValue(e.target.value);
         handleSearch(e.target.value);
+       }}
+       onKeyDown={e => {
+        if (e.key === 'Enter') {
+         handleSearch(value);
+         triggerRef.current?.click();
+        }
        }}
       />
      </SelectV2.Trigger>
@@ -50,9 +59,7 @@ const Index = () => {
           value: location.id,
           label: `${location.name}, ${location.region}`,
          }}
-         onClick={() =>
-          handleSelectLocation(`${location.name}, ${location.region}`)
-         }
+         onClick={() => handleSelect(`${location.name}, ${location.region}`)}
          css={S.menuItemStyle}
         />
        ))}
