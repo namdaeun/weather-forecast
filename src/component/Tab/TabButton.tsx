@@ -9,6 +9,7 @@ interface TabButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const TabButton = ({ index, onClick, children, ...props }: TabButtonProps) => {
  const { selectedIndex, setSelectedIndex } = useTab();
+
  const isSelected = selectedIndex === index;
 
  return (

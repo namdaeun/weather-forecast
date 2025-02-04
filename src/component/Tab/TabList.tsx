@@ -13,7 +13,7 @@ const TabList = ({ children }: TabListProps) => {
     React.isValidElement(child)
      ? React.cloneElement(child, {
         ...child.props,
-        isSelected: index === selectedIndex,
+        'data-is-selected': index === selectedIndex,
         onClick: () => setSelectedIndex(index),
        })
      : child,
