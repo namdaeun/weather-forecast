@@ -8,7 +8,7 @@ interface ContainerProps extends ComponentPropsWithoutRef<'div'> {
 
 const Container = ({ title, children, maxWidth, ...props }: ContainerProps) => {
  return (
-  <div css={S.wrapperStyle(maxWidth || 10)} {...props}>
+  <div css={S.wrapperStyle} {...props}>
    <h1 css={S.titleStyle}>{title}</h1>
    {children}
   </div>

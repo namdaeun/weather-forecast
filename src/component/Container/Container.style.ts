@@ -1,21 +1,19 @@
 import { css } from '@emotion/react';
 import { theme } from '../../style/theme';
 
-export const wrapperStyle = (maxWidth: number) =>
- css({
-  display: 'flex',
+export const wrapperStyle = css({
+ display: 'flex',
 
-  width: '100%',
-  maxWidth: `${maxWidth}rem`,
+ width: '100%',
 
-  padding: '2rem 3.4rem',
+ padding: '2rem 3.4rem',
 
-  flexDirection: 'column',
+ flexDirection: 'column',
 
-  borderRadius: '15px',
+ borderRadius: '15px',
 
-  backgroundColor: theme.colors.blue700,
- });
+ backgroundColor: theme.colors.blue700,
+});
 
 export const titleStyle = css({
  color: theme.colors.gray200,
