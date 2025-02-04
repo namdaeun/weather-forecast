@@ -4,7 +4,7 @@ import { theme } from '../../style/theme';
 export const layoutStyle = css({
  display: 'flex',
 
- padding: '3rem 1rem',
+ padding: '5.7rem 1rem',
 
  gap: '2rem',
 });

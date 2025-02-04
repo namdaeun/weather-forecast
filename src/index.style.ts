@@ -26,7 +26,7 @@ export const menuStyle = css({
  width: '100%',
  maxWidth: '70rem',
 
- padding: '2rem 3rem',
+ padding: '1.5rem 3rem',
  marginTop: '0.3rem',
 
  flexDirection: 'column',
@@ -39,7 +39,9 @@ export const menuStyle = css({
 
 export const menuItemStyle = css({
  display: 'flex',
+
  width: '100%',
+ maxWidth: '70rem',
 
  justifyContent: 'start',
 
