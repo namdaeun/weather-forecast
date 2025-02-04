@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { fetchForecast } from '../../api/fetchForecast';
-import IcSun from '../../assets/svg/icon/IcSun';
-import { Tab } from '../../components/Tab';
+import IcSun from '../../asset/svg/IcSun';
+import { Tab } from '../../component/Tab';
 import {
  DEFAULT_CURRENT,
  DEFAULT_FORECAST,
  DEFAULT_HOUR,
-} from '../../constants/default';
+} from '../../constant/default';
 import type {
  Current,
  Forecast,
@@ -19,7 +19,7 @@ import HourlyForecast from '../HourlyForecast/HourlyForecast';
 import WeeklyForecast from '../WeeklyForecast/WeeklyForecast';
 import * as S from './Weather.style';
 
-const Weather = () => {
+const Weather = ({ searchLocation }: { searchLocation: string }) => {
  const [current, setCurrent] = useState<Current>();
  const [location, setLocation] = useState<Location>();
  const [forecast, setForecast] = useState<Forecast>();
@@ -28,7 +28,7 @@ const Weather = () => {
  useEffect(() => {
   const fetchData = async () => {
    try {
-    const data = await fetchForecast();
+    const data = await fetchForecast(searchLocation);
     const hourlyData = data.forecast.forecastday[0]?.hour || [];
 
     const filteredData = extractSixHourlyForecast(hourlyData);
@@ -38,14 +38,14 @@ const Weather = () => {
     setForecast(data.forecast);
     setLocation(data.location);
    } catch (error) {
-    console.error('Failed to fetch weather data:', error);
+    console.error(error);
    }
   };
 
   fetchData();
- }, []);
+ }, [searchLocation]);
 
- console.log(forecast?.forecastday[0].hour);
+ console.log(forecast);
 
  return (
   <div css={S.wrapperStyle}>
