@@ -1,5 +1,14 @@
 import React from 'react';
+import {
+ IcRainDrop,
+ IcSnowflake,
+ IcTemperature,
+ IcUv,
+ IcWind,
+} from '../../asset/svg';
+import Container from '../../component/Container/Container';
 import type { Current, Forecast } from '../../type/forecast';
+import * as S from './AirCondition.style';
 
 interface AirConditionProps {
  current: Current;
@@ -7,20 +16,57 @@ interface AirConditionProps {
 }
 
 const AirCondition = ({ current, forecast }: AirConditionProps) => {
- if (!forecast.forecastday.length) {
-  return <div>Loading...</div>;
+ if (!forecast.forecastday) {
+  return <div>Loading</div>;
  }
 
  const currentForecast = forecast.forecastday[0].day;
 
  return (
-  <div>
-   <p>{current.feelslike_c}</p>
-   <p>{currentForecast.daily_chance_of_rain}</p>
-   <p>{currentForecast.daily_chance_of_snow}</p>
-   <p>{current.wind_kph}</p>
-   <p>{current.uv}</p>
-  </div>
+  <Container title="현재 날씨 정보">
+   <div css={S.wrapperStyle}>
+    <div css={S.layoutStyle}>
+     <div css={S.categoryLayoutStyle}>
+      <h2 css={S.categoryStyle}>
+       <IcTemperature width={10} height={18} />
+       Real Feel
+      </h2>
+      <p css={S.valueStyle}>{current.feelslike_c}°C</p>
+     </div>
+     <div css={S.categoryLayoutStyle}>
+      <h2 css={S.categoryStyle}>
+       <IcRainDrop width={10} height={18} />
+       Chance of Rain
+      </h2>
+      <p css={S.valueStyle}>{currentForecast.daily_chance_of_rain}%</p>
+     </div>
+     <div css={S.categoryLayoutStyle}>
+      <h2 css={S.categoryStyle}>
+       <IcSnowflake width={18} height={18} />
+       Chance of Snow
+      </h2>
+      <p css={S.valueStyle}>{currentForecast.daily_chance_of_snow}%</p>
+     </div>
+    </div>
+
+    <div css={S.rightLayoutStyle}>
+     <div css={S.categoryLayoutStyle}>
+      <h2 css={S.categoryStyle}>
+       <IcWind width={18} height={17} />
+       Wind
+      </h2>
+      <p css={S.valueStyle}>{current.wind_kph}km/h</p>
+     </div>
+     <div css={S.categoryLayoutStyle}>
+      <h2 css={S.categoryStyle}>
+       <IcUv width={18} height={18} />
+       UV index
+      </h2>
+      <p css={S.valueStyle}>{current.uv}</p>
+     </div>
+    </div>
+   </div>
+  </Container>
  );
 };
 
