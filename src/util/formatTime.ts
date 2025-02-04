@@ -1,5 +1,5 @@
 export const formatTime = (dateTime: string): string => {
- const [date, time] = dateTime.split(' ');
+ const [, time] = dateTime.split(' ');
  const [hour, minute] = time.split(':').map(Number);
 
  const AMPM = hour >= 12 ? 'PM' : 'AM';
