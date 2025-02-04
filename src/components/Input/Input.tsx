@@ -1,9 +1,8 @@
-import React, { type HTMLAttributes, type ReactNode } from 'react';
+import React, { type InputHTMLAttributes, type ReactNode } from 'react';
 import * as S from './Input.style';
 
-interface InputProps extends HTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
  leftIcon?: ReactNode;
- placeholder?: string;
 }
 
 const Input = ({ leftIcon, placeholder, onChange, ...props }: InputProps) => {
