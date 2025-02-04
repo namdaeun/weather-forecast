@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { theme } from '../../style/theme';
 
-export const wrapperStyle = maxWidth =>
+export const wrapperStyle = (maxWidth: string) =>
  css({
   display: 'flex',
 
@@ -21,4 +21,6 @@ export const titleStyle = css({
  color: theme.colors.gray200,
 
  ...theme.fonts.body1,
+
+ whiteSpace: 'nowrap',
 });

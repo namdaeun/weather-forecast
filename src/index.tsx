@@ -1,8 +1,9 @@
 import React from 'react';
-import Weather from './Weather/Weather';
-import IcSearch from './assets/svg/icon/IcSearch';
-import Input from './components/Input/Input';
+
+import IcSearch from './assets/svg/IcSearch';
+import Input from './component/Input/Input';
 import * as S from './index.style';
+import Weather from './shared/Weather/Weather';
 
 const Index = () => {
  return (
