@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AirCondition from '../AirCondition/AirCondition';
 import HourlyForecast from '../HourlyForecast/HourlyForecast';
+import { fetch7daysForecast } from '../api/fetch7daysForecast';
 import IcSun from '../assets/svg/icon/IcSun';
-import Container from '../components/Container/Container';
 import { Tab } from '../components/Tab';
 import * as S from './Weather.style';
+import WeeklyForecast from './WeeklyForecast/WeeklyForecast';
+
+interface Location {
+ name: string;
+ region: string;
+ country: string;
+}
+
+export interface Forecast {
+ forecastday: Forecastday[];
+}
 
 const Weather = () => {
+ const [location, setLocation] = useState<Location>();
+ const [forecast, setForecast] = useState<Forecast>();
+
+ useEffect(() => {
+  const fetchData = async () => {
+   const data = await fetch7daysForecast();
+
+   setLocation(data.location);
+   setForecast(data.forecast);
+  };
+  fetchData();
+ }, []);
+
+ console.log(location?.name);
+
  return (
   <div css={S.wrapperStyle}>
    <div css={S.layoutStyle}>
@@ -18,8 +44,10 @@ const Weather = () => {
      }}
     >
      <div>
-      <h1 css={S.cityNameStyle}>Seoul</h1>
-      <p css={S.descStyle}>Chance of rain: 10%</p>
+      <h1 css={S.cityNameStyle}>{location?.name}</h1>
+      <p css={S.descStyle}>
+       Chance of rain: {forecast?.forecastday[0].day.daily_chance_of_rain}%
+      </p>
       <h2 css={S.degreeStyle}>31°</h2>
      </div>
      <IcSun width={184} height={184} />
@@ -37,9 +65,7 @@ const Weather = () => {
      </Tab.Panel>
     </Tab>
    </div>
-   <Container title="7-Days Forecast" maxWidth={'36rem'}>
-    gg
-   </Container>
+   <WeeklyForecast forecast={forecast} />
   </div>
  );
 };
