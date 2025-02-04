@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../../components/Container/Container';
+import Container from '../../component/Container/Container';
 import type { Forecast } from '../../type/forecast';
 
 const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
@@ -8,7 +8,7 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
  }
 
  return (
-  <Container title="7-Days Forecast" maxWidth={'36rem'}>
+  <Container title="7-Days Forecast" maxWidth={36}>
    {forecast.forecastday.map(day => (
     <div key={day.date}>
      <p>{day.date}</p>

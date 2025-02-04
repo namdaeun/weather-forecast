@@ -1,12 +1,12 @@
 import { css } from '@emotion/react';
 import { theme } from '../../style/theme';
 
-export const wrapperStyle = (maxWidth: string) =>
+export const wrapperStyle = (maxWidth: number) =>
  css({
   display: 'flex',
 
   width: '100%',
-  maxWidth,
+  maxWidth: `${maxWidth}rem`,
 
   padding: '2rem 3.4rem',
 
