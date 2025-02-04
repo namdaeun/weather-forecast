@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { fetchForecast } from '../../api/fetchForecast';
-import IcSun from '../../asset/svg/IcSun';
 import { Tab } from '../../component/Tab';
 import {
  DEFAULT_CURRENT,
@@ -14,6 +13,7 @@ import type {
  Location,
 } from '../../type/forecast';
 import { extractSixHourlyForecast } from '../../util/extractForecast';
+import { getWeatherIcon } from '../../util/getWeatherIcon';
 import AirCondition from '../AirCondition/AirCondition';
 import HourlyForecast from '../HourlyForecast/HourlyForecast';
 import WeeklyForecast from '../WeeklyForecast/WeeklyForecast';
@@ -45,8 +45,6 @@ const Weather = ({ searchLocation }: { searchLocation: string }) => {
   fetchData();
  }, [searchLocation]);
 
- console.log(forecast);
-
  return (
   <div css={S.wrapperStyle}>
    <div css={S.layoutStyle}>
@@ -64,7 +62,7 @@ const Weather = ({ searchLocation }: { searchLocation: string }) => {
       </p>
       <h2 css={S.degreeStyle}>{current?.temp_c}°</h2>
      </div>
-     <IcSun width={184} height={184} />
+     {current && getWeatherIcon(current.condition.text, 184)}
     </div>
     <Tab>
      <Tab.List>

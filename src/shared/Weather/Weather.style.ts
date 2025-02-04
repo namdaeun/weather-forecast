@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { MOBILE_MEDIA_QUERY } from '../../style/mediaQuery';
 import { theme } from '../../style/theme';
 
 export const cityNameStyle = css({
@@ -27,6 +28,10 @@ export const wrapperStyle = css({
 
  justifyContent: 'space-between',
  gap: '3.7rem',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  flexWrap: 'wrap',
+ },
 });
 
 export const layoutStyle = css({
