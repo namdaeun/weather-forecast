@@ -20,6 +20,10 @@ const fonts = {
   fontSize: '4rem',
   fontWeight: 700,
  },
+ title3: {
+  fontSize: '3rem',
+  fontWeight: 600,
+ },
  body1: {
   fontSize: '1.7rem',
   fontWeight: 600,
@@ -39,6 +43,10 @@ const fonts = {
  body5: {
   fontSize: '1.1rem',
   fontWeight: 700,
+ },
+ body6: {
+  fontSize: '1.6rem',
+  fontWeight: 400,
  },
 } as const;
 
