@@ -1,18 +1,16 @@
 import React, { type ButtonHTMLAttributes } from 'react';
+
+import { useTab } from './TabContext';
 import * as S from './index.style';
 
-interface TabMenuProps extends ButtonHTMLAttributes<HTMLButtonElement> {
- menu: string;
- isSelected?: boolean;
- onClick?: () => void;
+interface TabButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+ index: number;
 }
 
-const TabButton = ({
- menu,
- isSelected = true,
- onClick,
- ...props
-}: TabMenuProps) => {
+const TabButton = ({ index, onClick, children, ...props }: TabButtonProps) => {
+ const { selectedIndex, setSelectedIndex } = useTab();
+ const isSelected = selectedIndex === index;
+
  return (
   <button
    type="button"
@@ -20,10 +18,13 @@ const TabButton = ({
    tabIndex={isSelected ? 0 : -1}
    aria-selected={isSelected}
    css={S.buttonStyle(isSelected)}
-   onClick={onClick}
+   onClick={e => {
+    setSelectedIndex(index);
+    onClick?.(e);
+   }}
    {...props}
   >
-   {menu}
+   {children}
   </button>
  );
 };
