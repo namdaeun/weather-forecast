@@ -21,6 +21,7 @@
  "linter": {
   "enabled": true,
   "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "ignore": ["src/asset"],
   "rules": {
    "recommended": true,
    "suspicious": {
