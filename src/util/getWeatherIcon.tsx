@@ -15,12 +15,12 @@ export const getWeatherIcon = (weather: Weather, size: number) => {
   case 'Partly Cloudy':
   case 'Overcast':
   case 'Cloudy':
-  case 'Mist':
    return <IcClouds width={size} height={size} css={{ flexShrink: '0' }} />;
   case 'Clear':
   case 'Sunny':
    return <IcSun width={size} height={size} css={{ flexShrink: '0' }} />;
   case 'Light freezing rain':
+  case 'Mist':
    return (
     <IcSunCloudsRain width={size} height={size} css={{ flexShrink: '0' }} />
    );
