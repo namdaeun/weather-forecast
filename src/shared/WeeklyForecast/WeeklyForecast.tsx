@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../../component/Container/Container';
+import Divider from '../../component/Divider/Divider';
 import type { Forecast, Weather } from '../../type/forecast';
 import { formatDate } from '../../util/formatDate';
 import { getWeatherImg } from '../../util/getWeatherIcon';
@@ -10,12 +11,10 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
   return <div>loading</div>;
  }
 
- console.log(forecast.forecastday.map(item => item.day.condition.text));
-
  return (
   <Container title="7-Days Forecast" css={S.containerStyle}>
    <div css={S.wrapperStyle}>
-    {forecast.forecastday.map(day => (
+    {forecast.forecastday.map((day, index) => (
      <div key={day.date}>
       <div css={S.layoutStyle}>
        <p css={S.dateStyle}>{formatDate(day.date)}</p>
@@ -24,6 +23,9 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
         {day.day.maxtemp_c} / {day.day.mintemp_c}
        </p>
       </div>
+      {index !== forecast.forecastday.length - 1 && (
+       <Divider size={100} type="horizontal" />
+      )}
      </div>
     ))}
    </div>
