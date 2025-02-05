@@ -3,7 +3,7 @@ import { MOBILE_MEDIA_QUERY } from '../../style/mediaQuery';
 import { theme } from '../../style/theme';
 
 export const buttonStyle = (isSelected: boolean) => {
- const color = isSelected ? theme.colors.gray200 : theme.colors.gray700;
+ const color = isSelected ? theme.colors.blue700 : theme.colors.gray700;
 
  return css({
   display: 'flex',
@@ -16,10 +16,11 @@ export const buttonStyle = (isSelected: boolean) => {
   borderRadius: '12px',
 
   color,
-  backgroundColor: isSelected ? theme.colors.gray600 : 'transparent',
+  backgroundColor: 'transparent',
+
+  zIndex: '1',
 
   ...theme.fonts.body1,
-
   cursor: 'pointer',
 
   svg: {
@@ -46,4 +47,28 @@ export const tabListStyle = css({
  gap: '1rem',
 
  backgroundColor: theme.colors.blue700,
+});
+
+export const tabWrapperStyle = css({
+ position: 'relative',
+ display: 'flex',
+ alignItems: 'center',
+});
+
+export const tabIndicatorStyle = css({
+ position: 'absolute',
+ bottom: 0,
+ left: 0,
+
+ width: '100%',
+ padding: '2.2rem',
+ height: '3px',
+
+ borderRadius: '10px',
+
+ backgroundColor: theme.colors.gray200,
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  padding: '1.9rem',
+ },
 });
