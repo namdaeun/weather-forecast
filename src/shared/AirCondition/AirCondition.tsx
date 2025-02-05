@@ -11,12 +11,12 @@ import type { Current, Forecast } from '../../type/forecast';
 import * as S from './AirCondition.style';
 
 interface AirConditionProps {
- current: Current;
- forecast: Forecast;
+ current?: Current;
+ forecast?: Forecast;
 }
 
 const AirCondition = ({ current, forecast }: AirConditionProps) => {
- if (!forecast.forecastday) {
+ if (!forecast?.forecastday) {
   return <div>Loading</div>;
  }
 
@@ -31,7 +31,7 @@ const AirCondition = ({ current, forecast }: AirConditionProps) => {
        <IcTemperature width={10} height={18} css={{ flexShrink: '0' }} />
        Real Feel
       </h2>
-      <p css={S.valueStyle}>{current.feelslike_c}°C</p>
+      <p css={S.valueStyle}>{current?.feelslike_c}°C</p>
      </div>
      <div css={S.categoryLayoutStyle}>
       <h2 css={S.categoryStyle}>
@@ -55,14 +55,14 @@ const AirCondition = ({ current, forecast }: AirConditionProps) => {
        <IcWind width={18} height={17} css={{ flexShrink: '0' }} />
        Wind
       </h2>
-      <p css={S.valueStyle}>{current.wind_kph}km/h</p>
+      <p css={S.valueStyle}>{current?.wind_kph}km/h</p>
      </div>
      <div css={S.categoryLayoutStyle}>
       <h2 css={S.categoryStyle}>
        <IcUv width={18} height={18} css={{ flexShrink: '0' }} />
        UV index
       </h2>
-      <p css={S.valueStyle}>{current.uv}</p>
+      <p css={S.valueStyle}>{current?.uv}</p>
      </div>
     </div>
    </div>

@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchForecast } from '../../api/fetchForecast';
 import { Tab } from '../../component/Tab';
-import {
- DEFAULT_CURRENT,
- DEFAULT_FORECAST,
- DEFAULT_HOUR,
-} from '../../constant/default';
 import type {
  Current,
  Forecast,
@@ -66,13 +61,10 @@ const Weather = ({ searchLocation }: { searchLocation: string }) => {
       <Tab.Button index={1}>Air Condition</Tab.Button>
      </Tab.List>
      <Tab.Panel index={0}>
-      <HourlyForecast hourlyForecast={hourlyForecast ?? DEFAULT_HOUR} />
+      <HourlyForecast hourlyForecast={hourlyForecast} />
      </Tab.Panel>
      <Tab.Panel index={1}>
-      <AirCondition
-       current={current ?? DEFAULT_CURRENT}
-       forecast={forecast ?? DEFAULT_FORECAST}
-      />
+      <AirCondition current={current} forecast={forecast} />
      </Tab.Panel>
     </Tab>
    </div>
