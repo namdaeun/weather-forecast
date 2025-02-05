@@ -14,7 +14,7 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
   <Container title="7-Days Forecast" css={S.containerStyle}>
    <div css={S.wrapperStyle}>
     {forecast.forecastday.map(day => (
-     <div key={day.date} css={{}}>
+     <div key={day.date}>
       <div css={S.layoutStyle}>
        <p css={S.dateStyle}>{formatDate(day.date)}</p>
        <p>{getWeatherIcon(day.day.condition.text.trim() as Weather, 60)}</p>

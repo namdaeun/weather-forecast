@@ -19,6 +19,10 @@ export const wrapperStyle = css({
 
  flexDirection: 'column',
  justifyContent: 'space-around',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  padding: '2rem',
+ },
 });
 
 export const layoutStyle = css({
@@ -27,20 +31,38 @@ export const layoutStyle = css({
  justifyContent: 'space-between',
  alignItems: 'center',
  gap: '2rem',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  justifyContent: 'space-around',
+ },
 });
 
 export const dateStyle = css({
+ minWidth: '3.5rem',
+
  color: theme.colors.gray300,
 
  ...theme.fonts.body3,
 
  whiteSpace: 'nowrap',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  ...theme.fonts.body5,
+ },
 });
 
 export const temperatureStyle = css({
- minWidth: '5rem',
+ display: 'flex',
+
+ minWidth: '6rem',
+
+ justifyContent: 'end',
 
  ...theme.fonts.body5,
 
  whiteSpace: 'nowrap',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  ...theme.fonts.body7,
+ },
 });

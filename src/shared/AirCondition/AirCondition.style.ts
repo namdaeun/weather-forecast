@@ -5,13 +5,17 @@ import { theme } from '../../style/theme';
 export const wrapperStyle = css({
  display: 'flex',
 
+ height: 'calc(100vh - 54.3rem)',
  padding: '1.8rem',
 
  justifyContent: 'space-around',
  gap: '10rem',
 
  [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  height: '100%',
+
   flexDirection: 'column',
+  justifyContent: 'center',
 
   gap: '3rem',
  },
@@ -26,6 +30,10 @@ export const categoryStyle = css({
  ...theme.fonts.body6,
 
  whiteSpace: 'nowrap',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  ...theme.fonts.body4,
+ },
 });
 
 export const layoutStyle = css({
@@ -53,6 +61,10 @@ export const categoryLayoutStyle = css({
  flexDirection: 'column',
 
  gap: '1.8rem',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  alignItems: 'center',
+ },
 });
 
 export const valueStyle = css({
@@ -64,5 +76,7 @@ export const valueStyle = css({
 
  [`@media ${MOBILE_MEDIA_QUERY}`]: {
   paddingLeft: '0rem',
+
+  ...theme.fonts.body2,
  },
 });

@@ -48,6 +48,10 @@ const fonts = {
   fontSize: '1.6rem',
   fontWeight: 400,
  },
+ body7: {
+  fontSize: '1.4rem',
+  fontWeight: 400,
+ },
  body8: {
   fontSize: '1.2rem',
   fontWeight: 400,
