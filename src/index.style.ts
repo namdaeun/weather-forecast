@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { MOBILE_MEDIA_QUERY } from './style/mediaQuery';
 import { theme } from './style/theme';
 
 export const wrapperStyle = css({
@@ -23,8 +24,9 @@ export const menuStyle = css({
  display: 'flex',
  position: 'absolute',
 
- width: '100%',
+ width: 'min(70rem, calc(100% - 16rem))',
  maxWidth: '70rem',
+ maxHeight: '30rem',
 
  padding: '1.5rem 3rem',
  marginTop: '0.3rem',
@@ -33,17 +35,18 @@ export const menuStyle = css({
  gap: '2rem',
 
  borderRadius: '15px',
-
  backgroundColor: theme.colors.blue700,
+
+ overflowY: 'auto',
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  width: 'min(69rem, calc(100% - 16rem))',
+  maxHeight: '10rem',
+ },
 });
 
 export const menuItemStyle = css({
- display: 'flex',
-
- width: '100%',
- maxWidth: '70rem',
-
- justifyContent: 'start',
+ minWidth: '0',
 
  color: theme.colors.gray200,
  backgroundColor: theme.colors.blue700,
@@ -51,4 +54,15 @@ export const menuItemStyle = css({
  ...theme.fonts.body3,
 
  cursor: 'pointer',
+
+ '& div': {
+  width: '100%',
+  overflow: 'hidden',
+  whiteSpace: 'nowrap',
+  textOverflow: 'ellipsis',
+ },
+
+ [`@media ${MOBILE_MEDIA_QUERY}`]: {
+  maxWidth: '69rem',
+ },
 });
