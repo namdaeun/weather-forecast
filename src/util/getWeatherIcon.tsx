@@ -25,7 +25,7 @@ const imgStyle = (size: number) =>
   objectFit: 'cover',
 
   [`@media ${MOBILE_MEDIA_QUERY}`]: {
-   width: size * 0.9,
+   width: size * 0.7,
    height: size * 0.7,
   },
  });
