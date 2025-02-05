@@ -1,21 +1,14 @@
-import React from 'react';
-
 import { css } from '@emotion/react';
+import React from 'react';
+import clouds from '../asset/img/clouds.png';
+import cloudsSnow from '../asset/img/clouds_snow.png';
+import rain from '../asset/img/rain.png';
+import snow from '../asset/img/snow.png';
+import sun from '../asset/img/sun.png';
+import sunCloudsRain from '../asset/img/sun_clouds_rain.png';
 
 import { MOBILE_MEDIA_QUERY } from '../style/mediaQuery';
 import type { Weather } from '../type/forecast';
-
-import clouds from '../asset/img/clouds.png';
-
-import sun from '../asset/img/sun.png';
-
-import sunCloudsRain from '../asset/img/sun_clouds_rain.png';
-
-import cloudsSnow from '../asset/img/clouds_snow.png';
-
-import snow from '../asset/img/snow.png';
-
-import rain from '../asset/img/rain.png';
 
 const imgStyle = (size: number) =>
  css({
