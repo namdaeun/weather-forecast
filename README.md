@@ -35,44 +35,43 @@ pnpm dev
 |-- 📁 public
 |-- 📁 src
 	|-- 📁 asset
-	|	 |-- 📁 svg
-  |      |-- IcSearch.tsx
-  |
 	|	 |-- 📁 img
+	|	 |-- 📁 svg
+        |            |-- IcSearch.tsx
+        |
 	|
 	|-- 📁 style
-	|	  |-- theme.ts
-  |   |-- globalStyle.ts
-	|		|-- mediaQuery.ts
-  |
-  |-- 📁 component
-  |   |-- 📁 Input
-  |         |-- Input.tsx
-  |         |-- Input.style.ts
-  |
+	|	 |-- theme.ts
+  	|   	 |-- globalStyle.ts
+	|	 |-- mediaQuery.ts
+  	|
+  	|-- 📁 component
+ 	|   |-- 📁 Input
+	|           |-- Input.tsx
+	|           |-- Input.style.ts
+	|
 	|-- 📁 shared
-	|	  |-- 📁 AirCondition
-  |       |-- AirCondition.tsx
-	|		  	|-- AirCondition.style.ts
-  |
+	|	|-- 📁 AirCondition
+	|           |-- AirCondition.tsx
+	|	    |-- AirCondition.style.ts
+	|  
 	|-- 📁 type
 	|
 	|-- 📁 util
-  |   |-- formatDate.ts
+	|   |-- formatDate.ts
 	|
 	|-- 📁 api
-	|	      |-- fetchForecast.ts
+	|	|-- fetchForecast.ts
 	|       |-- fetchSearchCity.ts
-  |
-  |-- 📁 constant
-          |-- default.ts
-  |
-  |
-  |-- index.tsx
-  |-- index.style.ts
-  |-- main.tsx
-  |-- styles.d.ts
-  |-- vite-env.d.ts
+  	|
+  	|-- 📁 constant
+	|   |-- default.ts
+  	|
+	|-- index.tsx
+	|-- index.style.ts
+	|-- main.tsx
+	|-- styles.d.ts
+	|-- vite-env.d.ts
 
 |-- biome.json
 |-- package.json
