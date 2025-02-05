@@ -48,13 +48,7 @@ const Weather = ({ searchLocation }: { searchLocation: string }) => {
  return (
   <div css={S.wrapperStyle}>
    <div css={S.layoutStyle}>
-    <div
-     css={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      padding: '2.3rem 5rem 0 3.7rem',
-     }}
-    >
+    <div css={S.containerStyle}>
      <div>
       <h1 css={S.cityNameStyle}>{location?.name}</h1>
       <p css={S.descStyle}>

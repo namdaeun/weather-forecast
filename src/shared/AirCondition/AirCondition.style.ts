@@ -14,9 +14,6 @@ export const wrapperStyle = css({
  [`@media ${MOBILE_MEDIA_QUERY}`]: {
   height: '100%',
 
-  flexDirection: 'column',
-  justifyContent: 'center',
-
   gap: '3rem',
  },
 });
@@ -61,10 +58,6 @@ export const categoryLayoutStyle = css({
  flexDirection: 'column',
 
  gap: '1.8rem',
-
- [`@media ${MOBILE_MEDIA_QUERY}`]: {
-  alignItems: 'center',
- },
 });
 
 export const valueStyle = css({
@@ -75,8 +68,6 @@ export const valueStyle = css({
  whiteSpace: 'nowrap',
 
  [`@media ${MOBILE_MEDIA_QUERY}`]: {
-  paddingLeft: '0rem',
-
   ...theme.fonts.body2,
  },
 });

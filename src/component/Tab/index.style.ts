@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { MOBILE_MEDIA_QUERY } from '../../style/mediaQuery';
 import { theme } from '../../style/theme';
 
 export const buttonStyle = (isSelected: boolean) => {
@@ -25,6 +26,10 @@ export const buttonStyle = (isSelected: boolean) => {
    path: {
     fill: color,
    },
+  },
+
+  [`@media ${MOBILE_MEDIA_QUERY}`]: {
+   ...theme.fonts.body4,
   },
  });
 };
