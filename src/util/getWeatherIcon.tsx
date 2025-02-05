@@ -34,6 +34,7 @@ export const getWeatherIcon = (weather: Weather, size: number) => {
   case 'Sunny':
    return <IcSun width={size} height={size} css={iconStyle(size)} />;
   case 'Light freezing rain':
+  case 'Patchy rain nearby':
   case 'Mist':
    return <IcSunCloudsRain width={size} height={size} css={iconStyle(size)} />;
   case 'Moderate snow':

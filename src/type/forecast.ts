@@ -10,6 +10,7 @@ export type Weather =
  | 'Blizzard'
  | 'Moderate or heavy snow showers'
  | 'Light snow showers'
+ | 'Patchy rain nearby'
  | 'Patchy snow nearby'
  | 'Rain';
 
