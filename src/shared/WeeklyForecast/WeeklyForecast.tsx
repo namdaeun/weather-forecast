@@ -2,13 +2,15 @@ import React from 'react';
 import Container from '../../component/Container/Container';
 import type { Forecast, Weather } from '../../type/forecast';
 import { formatDate } from '../../util/formatDate';
-import { getWeatherIcon } from '../../util/getWeatherIcon';
+import { getWeatherImg } from '../../util/getWeatherIcon';
 import * as S from './WeeklyForecast.style';
 
 const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
  if (!forecast || !forecast.forecastday) {
   return <div>loading</div>;
  }
+
+ console.log(forecast.forecastday.map(item => item.day.condition.text));
 
  return (
   <Container title="7-Days Forecast" css={S.containerStyle}>
@@ -17,7 +19,7 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
      <div key={day.date}>
       <div css={S.layoutStyle}>
        <p css={S.dateStyle}>{formatDate(day.date)}</p>
-       <p>{getWeatherIcon(day.day.condition.text.trim() as Weather, 60)}</p>
+       <p>{getWeatherImg(day.day.condition.text.trim() as Weather, 50)}</p>
        <p css={S.temperatureStyle}>
         {day.day.maxtemp_c} / {day.day.mintemp_c}
        </p>

@@ -1,16 +1,8 @@
-export { default as IcCloudsSnow } from "./IcCloudsSnow";
-export { default as IcClouds } from "./IcClouds";
-export { default as IcLightning } from "./IcLightning";
-export { default as IcMap } from "./IcMap";
-export { default as IcRain } from "./IcRain";
 export { default as IcRainDrop } from "./IcRainDrop";
 export { default as IcSearch } from "./IcSearch";
-export { default as IcSnow } from "./IcSnow";
 export { default as IcSnowflake } from "./IcSnowflake";
-export { default as IcSunCloudsRain } from "./IcSunCloudsRain";
-export { default as IcSunClouds } from "./IcSunClouds";
-export { default as IcSun } from "./IcSun";
 export { default as IcTemperature } from "./IcTemperature";
 export { default as IcUv } from "./IcUv";
 export { default as IcWeather } from "./IcWeather";
 export { default as IcWind } from "./IcWind";
+

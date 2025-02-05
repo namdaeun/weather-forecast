@@ -13,7 +13,9 @@ import type {
  Location,
 } from '../../type/forecast';
 import { extractSixHourlyForecast } from '../../util/extractForecast';
-import { getWeatherIcon } from '../../util/getWeatherIcon';
+
+import { getWeatherImg } from '../../util/getWeatherIcon';
+
 import AirCondition from '../AirCondition/AirCondition';
 import HourlyForecast from '../HourlyForecast/HourlyForecast';
 import WeeklyForecast from '../WeeklyForecast/WeeklyForecast';
@@ -56,7 +58,7 @@ const Weather = ({ searchLocation }: { searchLocation: string }) => {
       </p>
       <h2 css={S.degreeStyle}>{current?.temp_c}°</h2>
      </div>
-     {current && getWeatherIcon(current.condition.text, 184)}
+     {current && getWeatherImg(current.condition.text, 184)}
     </div>
     <Tab>
      <Tab.List>

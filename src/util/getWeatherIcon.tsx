@@ -1,52 +1,69 @@
 import React from 'react';
 
 import { css } from '@emotion/react';
-import {
- IcClouds,
- IcCloudsSnow,
- IcRain,
- IcSnow,
- IcSun,
- IcSunCloudsRain,
-} from '../asset/svg';
+
 import { MOBILE_MEDIA_QUERY } from '../style/mediaQuery';
 import type { Weather } from '../type/forecast';
 
-const iconStyle = (size: number) =>
+import clouds from '../asset/img/clouds.png';
+
+import sun from '../asset/img/sun.png';
+
+import sunCloudsRain from '../asset/img/sun_clouds_rain.png';
+
+import cloudsSnow from '../asset/img/clouds_snow.png';
+
+import snow from '../asset/img/snow.png';
+
+import rain from '../asset/img/rain.png';
+
+const imgStyle = (size: number) =>
  css({
   width: size,
   height: size,
-  flexShrink: 0,
+
+  objectFit: 'cover',
 
   [`@media ${MOBILE_MEDIA_QUERY}`]: {
-   width: size * 0.7,
+   width: size * 0.9,
    height: size * 0.7,
   },
  });
 
-export const getWeatherIcon = (weather: Weather, size: number) => {
+export const getWeatherImg = (weather: Weather, size: number) => {
+ let imgSrc = sun;
+
  switch (weather) {
   case 'Partly Cloudy':
   case 'Overcast':
   case 'Cloudy':
-   return <IcClouds width={size} height={size} css={iconStyle(size)} />;
+   imgSrc = clouds;
+   break;
   case 'Clear':
   case 'Sunny':
-   return <IcSun width={size} height={size} css={iconStyle(size)} />;
+   imgSrc = sun;
+   break;
   case 'Light freezing rain':
   case 'Patchy rain nearby':
   case 'Mist':
-   return <IcSunCloudsRain width={size} height={size} css={iconStyle(size)} />;
+   imgSrc = sunCloudsRain;
+   break;
   case 'Moderate snow':
   case 'Patchy snow nearby':
   case 'Light snow showers':
-   return <IcCloudsSnow width={size} height={size} css={iconStyle(size)} />;
+   imgSrc = cloudsSnow;
+   break;
   case 'Blizzard':
   case 'Moderate or heavy snow showers':
-   return <IcSnow width={size} height={size} css={iconStyle(size)} />;
+   imgSrc = snow;
+   break;
   case 'Rain':
-   return <IcRain width={size} height={size} css={iconStyle(size)} />;
+   imgSrc = rain;
+   break;
   default:
-   return <IcSun width={size} height={size} css={iconStyle(size)} />;
+   imgSrc = sun;
+   break;
  }
+
+ return <img src={imgSrc} alt={weather} css={imgStyle(size)} />;
 };

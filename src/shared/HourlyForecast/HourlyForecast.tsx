@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../../component/Container/Container';
 import type { HourlyWeather, Weather } from '../../type/forecast';
 import { formatTime } from '../../util/formatTime';
-import { getWeatherIcon } from '../../util/getWeatherIcon';
+import { getWeatherImg } from '../../util/getWeatherIcon';
 import * as S from './HourlyForecast.style';
 
 const HourlyForecast = ({
@@ -14,7 +14,7 @@ const HourlyForecast = ({
     {hourlyForecast.map((hour, index) => (
      <div key={`${hour.time}-${index}`} css={S.forecastStyle}>
       <p css={S.hourStyle}>{formatTime(hour.time)}</p>
-      <p>{getWeatherIcon(hour.condition.text.trim() as Weather, 100)}</p>
+      <p>{getWeatherImg(hour.condition.text.trim() as Weather, 100)}</p>
       <p css={S.temperatureStyle}>{hour.temp_c}°C</p>
      </div>
     ))}
