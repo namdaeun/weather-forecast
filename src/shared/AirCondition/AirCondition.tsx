@@ -16,11 +16,7 @@ interface AirConditionProps {
 }
 
 const AirCondition = ({ current, forecast }: AirConditionProps) => {
- if (!forecast?.forecastday) {
-  return <div>Loading</div>;
- }
-
- const currentForecast = forecast.forecastday[0].day;
+ const currentForecast = forecast?.forecastday[0].day;
 
  return (
   <Container title="현재 날씨 정보">
@@ -38,14 +34,14 @@ const AirCondition = ({ current, forecast }: AirConditionProps) => {
        <IcRainDrop width={10} height={18} css={{ flexShrink: '0' }} />
        Chance of Rain
       </h2>
-      <p css={S.valueStyle}>{currentForecast.daily_chance_of_rain}%</p>
+      <p css={S.valueStyle}>{currentForecast?.daily_chance_of_rain}%</p>
      </div>
      <div css={S.categoryLayoutStyle}>
       <h2 css={S.categoryStyle}>
        <IcSnowflake width={18} height={18} css={{ flexShrink: '0' }} />
        Chance of Snow
       </h2>
-      <p css={S.valueStyle}>{currentForecast.daily_chance_of_snow}%</p>
+      <p css={S.valueStyle}>{currentForecast?.daily_chance_of_snow}%</p>
      </div>
     </div>
 

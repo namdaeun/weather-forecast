@@ -7,14 +7,10 @@ import { getWeatherImg } from '../../util/getWeatherIcon';
 import * as S from './WeeklyForecast.style';
 
 const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
- if (!forecast || !forecast.forecastday) {
-  return <div>loading</div>;
- }
-
  return (
   <Container title="7-Days Forecast" css={S.containerStyle}>
    <ul css={S.wrapperStyle}>
-    {forecast.forecastday.map((day, index) => (
+    {forecast?.forecastday.map((day, index) => (
      <li key={day.date}>
       <div css={S.layoutStyle}>
        <p css={S.dateStyle}>{formatDate(day.date)}</p>
@@ -23,7 +19,7 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
         {day.day.maxtemp_c} / {day.day.mintemp_c}
        </p>
       </div>
-      {index !== forecast.forecastday.length - 1 && (
+      {index !== forecast?.forecastday.length - 1 && (
        <Divider size={100} type="horizontal" />
       )}
      </li>
