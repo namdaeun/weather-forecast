@@ -7,9 +7,15 @@
 pnpm dev
 ```
 
-
 ## 💥 핵심기능
+- 이번주 날씨 확인
+- air condition(바람세기, 비 올 가능성 등)
+- 시간 별 날씨 확인
+- 지역 검색을 통한 날씨 확인
 
+
+## 트러블 슈팅
+- [링크](https://achieved-syzygy-75c.notion.site/Trouble-Shooting-19375c7c0fad806eaf25e08b6ccaa0f9?pvs=4)
 
 
 ## 🔗 기술스택
