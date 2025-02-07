@@ -34,6 +34,10 @@ pnpm dev
 - `framer-motion: "^12.2.0"` : tab의 자연스러운 애니메이션 구현
 - `vite-plugin-svgr: "^4.3.0"` : svg를 컴포넌트화하여 import하기 위함
 
+### 피그마 링크
+
+- [링크](https://www.figma.com/design/u6qJqnc4UTOipfn542HbpQ/Untitled?node-id=0-1&t=zNg9wnplPxQsTgf0-1)
+
 ## 📂 폴더 구조
 
 ```
