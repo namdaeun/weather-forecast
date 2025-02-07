@@ -13,8 +13,8 @@ const HourlyForecast = ({
   <Container title="시간 별 일기예보">
    <div css={S.layoutStyle}>
     {hourlyForecast.map((hour, index) => (
-     <>
-      <div key={`${hour.time}-${index}`} css={S.forecastStyle}>
+     <div key={`${hour.time}-${index}`}>
+      <div css={S.forecastStyle}>
        <p css={S.hourStyle}>{formatTime(hour.time)}</p>
        <p>{getWeatherImg(hour.condition.text.trim() as Weather, 100)}</p>
        <p css={S.temperatureStyle}>{hour.temp_c}°C</p>
@@ -22,7 +22,7 @@ const HourlyForecast = ({
       {index !== hourlyForecast.length - 1 && (
        <Divider size={100} type="vertical" />
       )}
-     </>
+     </div>
     ))}
    </div>
   </Container>
