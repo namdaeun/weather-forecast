@@ -13,9 +13,9 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
 
  return (
   <Container title="7-Days Forecast" css={S.containerStyle}>
-   <div css={S.wrapperStyle}>
+   <ul css={S.wrapperStyle}>
     {forecast.forecastday.map((day, index) => (
-     <div key={day.date}>
+     <li key={day.date}>
       <div css={S.layoutStyle}>
        <p css={S.dateStyle}>{formatDate(day.date)}</p>
        <p>{getWeatherImg(day.day.condition.text.trim() as Weather, 50)}</p>
@@ -26,9 +26,9 @@ const WeeklyForecast = ({ forecast }: { forecast?: Forecast }) => {
       {index !== forecast.forecastday.length - 1 && (
        <Divider size={100} type="horizontal" />
       )}
-     </div>
+     </li>
     ))}
-   </div>
+   </ul>
   </Container>
  );
 };
