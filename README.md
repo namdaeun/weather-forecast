@@ -9,7 +9,7 @@ pnpm dev
 
 ## 💥 핵심기능
 - 이번주 날씨 확인
-- air condition(바람세기, 비 올 가능성 등)
+- air condition(바람세기, 비 올 가능성 등) 확인
 - 시간 별 날씨 확인
 - 지역 검색을 통한 날씨 확인
 
@@ -31,8 +31,8 @@ pnpm dev
 ## 📚 주요 라이브러리
 
 - `@sopt-makers/ui: "^2.8.8"`
-- `framer-motion: "^12.2.0"`
-- `vite-plugin-svgr: "^4.3.0"`
+- `framer-motion: "^12.2.0"` : tab의 자연스러운 애니메이션 구현
+- `vite-plugin-svgr: "^4.3.0"` : svg를 컴포넌트화하여 import하기 위함
 
 ## 📂 폴더 구조
 
